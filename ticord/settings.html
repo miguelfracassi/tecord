@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Configurações</title><meta name="robots" content="noindex"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="favicon.svg"><script src="theme.js"></script><link rel="stylesheet" href="style.css"></head><body data-page="settings">
+<main><section class="hero sm"><div class="w"><h1><b>Configurações</b>Sua conta e sua aparência.</h1></div></section>
+<section class="sec" style="padding-top:28px"><div class="w sg" id="sg">
+ <aside class="card pc" id="pc" hidden><div class="av" id="av"></div><h3 id="nm"></h3><p id="em"></p><p id="ph"></p><button class="cta o" id="lo" type="button">Sair da conta</button></aside>
+ <div class="sx">
+  <div class="card"><h3>Aparência</h3><p>Escolha o tema do site. A escolha vale para todas as páginas.</p>
+   <div class="tt" id="th"><button type="button" data-v="light"><span class="pv l"></span>Claro</button><button type="button" data-v="dark"><span class="pv d"></span>Escuro</button></div></div>
+  <div class="card" id="gu"><h3>Entre na sua conta</h3><p>Acesse sua conta para ver seus dados, mudar a senha e salvar o tema em todos os aparelhos.</p><a class="cta" href="login.html">Entrar ou criar conta</a></div>
+  <div class="card" id="pw" hidden><h3>Mudar senha</h3><p>Use pelo menos 8 caracteres.</p>
+   <form id="pf"><label>Senha atual<input id="pcur" type="password" required autocomplete="current-password"></label><label>Nova senha<input id="pnew" type="password" required minlength="8" autocomplete="new-password"></label><div class="msg" id="pm"></div><button class="cta">Salvar nova senha</button></form></div>
+  <div class="card dz" id="dz" hidden><h3>Apagar conta</h3><p>Esta ação é definitiva e apaga também o seu histórico de conversas.</p>
+   <form id="df"><label>Confirme com sua senha<input id="dp" type="password" required autocomplete="current-password"></label><div class="msg" id="dm"></div><button class="cta danger">Apagar minha conta</button></form></div>
+ </div></div></section></main>
+<script src="app.js"></script><script src="settings.js"></script></body></html>

@@ -1,0 +1,14 @@
+GRUPO TICORD - SITE
+
+Variáveis de ambiente (Vercel > Settings > Environment Variables):
+  DATABASE_URL    banco Neon (Vercel > Storage > Neon preenche sozinho)
+  AUTH_SECRET     texto longo e aleatório (assina o login)
+  GROQ_API_KEY    chave da Groq (console.groq.com/keys)
+  ADMIN_PASSWORD  senha da página escondida /inbox
+  GROQ_MODEL      (opcional) força um modelo; sem ele o servidor consulta
+                  /openai/v1/models e escolhe um disponível.
+
+Páginas: index, about, projects (+ cord, fun, bup), support, contact, settings, login e inbox (escondida).
+Tema: só claro e escuro (theme.js). Menu: logo + hambúrguer + conta/login (app.js).
+O login/cadastro fica em /login (sem captcha). O suporte (chat) redireciona para lá quando a pessoa não está logada.
+As tabelas (users, messages, contacts) são criadas automaticamente.

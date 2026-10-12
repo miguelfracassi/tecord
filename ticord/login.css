@@ -1,0 +1,16 @@
+body.lg{background:var(--bg);min-height:100vh}
+.lw{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px 16px}
+.lc{width:min(430px,100%);background:var(--card);border:1px solid var(--line);border-radius:36px;padding:36px 30px;box-shadow:var(--sh)}
+.lc .logo{justify-content:center;margin-bottom:22px}
+.lc h1{font-size:23px;line-height:1.3;letter-spacing:-.01em;text-align:center}
+.ls{color:var(--mut);font-size:14.5px;text-align:center;margin:6px 0 20px}
+.tabs{display:flex;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px;margin-bottom:18px}
+.tabs button{flex:1;border:0;background:transparent;color:var(--mut);font:inherit;font-size:14px;font-weight:700;padding:10px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.tabs button.on{background:var(--btn);color:#fff}
+.lf{display:grid;gap:14px}
+.rf{display:none;gap:14px}.rf.on{display:grid}
+.pw{position:relative;display:block}.pw input{padding-right:92px}
+.pw button{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--b);font:inherit;font-size:13px;font-weight:700;padding:8px 12px;cursor:pointer;border-radius:999px}
+.pw button:hover{background:var(--pale)}
+.lf .cta{width:100%;padding:14px}
+.back{color:var(--mut);font-size:14px;padding:8px 16px;border-radius:999px}.back:hover{color:var(--b);background:var(--pale)}
