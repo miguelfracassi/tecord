@@ -4,11 +4,11 @@ function api(p,o){o=o||{};o.headers={"Content-Type":"application/json"};o.creden
 function setMode(m){mode=m;var r=m==="register";
  $("tl").classList.toggle("on",!r);$("tr").classList.toggle("on",r);$("rf").classList.toggle("on",r);
  $("an").required=$("ap").required=r;
- $("lt").textContent=r?"Criar sua conta":"Entrar na sua conta";
+ $("lt").textContent=r?"Criar seu acesso":"Entrar na sua conta";
  $("ls").textContent=r?"Leva menos de um minuto.":"Acesse o suporte do Grupo Ticord.";
- $("ab").textContent=r?"Criar conta":"Entrar";
+ $("ab").textContent=r?"Criar acesso":"Entrar";
  $("aw").autocomplete=r?"new-password":"current-password";
- $("am").textContent="";document.title=(r?"Criar conta":"Entrar")+" · Grupo Ticord"}
+ $("am").textContent="";document.title=(r?"Criar acesso":"Entrar")+" · Grupo Ticord"}
 $("tl").onclick=function(){setMode("login")};
 $("tr").onclick=function(){setMode("register")};
 $("sh").onclick=function(){var s=$("aw").type==="password";$("aw").type=s?"text":"password";$("sh").textContent=s?"Ocultar":"Mostrar"};

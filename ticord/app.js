@@ -8,15 +8,15 @@ window.tkApi=api;
 var login=P==="login";
 if(login){document.body.insertAdjacentHTML("afterbegin",D);return}
 try{U=JSON.parse(localStorage.getItem("tk_u"))}catch(e){}
-document.body.insertAdjacentHTML("afterbegin",D+'<nav id="nav"><div class="bar"><a class="logo" href="index.html"><svg><use href="#lg"/></svg>Ticord</a><div class="rt"><button class="burger" id="bg" aria-label="Menu" aria-expanded="false" aria-controls="drop"><i></i><i></i><i></i></button><a id="acc" href="login.html">Entrar</a></div></div><div class="drop" id="drop"></div></nav>');
+document.body.insertAdjacentHTML("afterbegin",D+'<nav id="nav"><div class="bar"><a class="logo" href="index.html"><svg><use href="#lg"/></svg>Ticord</a><div class="rt"><button class="burger" id="bg" aria-label="Menu" aria-expanded="false" aria-controls="drop"><i></i><i></i><i></i></button><a id="acc" href="login.html">Acessar</a></div></div><div class="drop" id="drop"></div></nav>');
 var bg=document.getElementById("bg"),drop=document.getElementById("drop"),acc=document.getElementById("acc");
-function tgLabel(){var t=document.getElementById("tg");if(t)t.textContent=root.dataset.theme==="dark"?"Mudar para modo claro":"Mudar para modo escuro"}
+function tgLabel(){var t=document.getElementById("tg");if(t)t.textContent=root.dataset.theme==="dark"?"Ativar tema claro":"Ativar tema escuro"}
 function fill(){
  acc.className="acc"+(U?" in":"");acc.href=U?"settings.html":"login.html";
  acc.innerHTML=U?"<i>"+esc(U.name.charAt(0).toUpperCase())+"</i><span>"+esc(U.name.split(" ")[0])+"</span>":"Entrar";
  var h=L.map(function(l){var on=l[0]===P||(l[0]==="projects"&&PJ[P]);return '<a href="'+l[0]+'.html"'+(on?' class="on"':'')+'>'+l[1]+'</a>'}).join("")+"<hr>";
- if(U)h+='<a href="settings.html"'+(P==="settings"?' class="on"':'')+'>Configurações</a>';
- h+='<button id="tg" type="button"></button>'+(U?'<button id="lo" type="button">Sair</button>':'<a href="login.html#criar">Criar conta</a>');
+ if(U)h+='<a href="settings.html"'+(P==="settings"?' class="on"':'')+'>Preferências</a>';
+ h+='<button id="tg" type="button"></button>'+(U?'<button id="lo" type="button">Encerrar sessão</button>':'<a href="login.html#criar">Criar conta</a>');
  drop.innerHTML=h;tgLabel();
  document.getElementById("tg").onclick=function(){var t=root.dataset.theme==="dark"?"light":"dark";tkTheme(t);if(U&&U.email)api("/api/auth?a=prefs",{method:"POST",body:JSON.stringify({theme:t})})};
  var lo=document.getElementById("lo");if(lo)lo.onclick=window.tkLogout}

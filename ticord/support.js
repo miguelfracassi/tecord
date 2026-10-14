@@ -1,12 +1,12 @@
 (function(){
 var $=function(i){return document.getElementById(i)},U=null,busy=false,api=tkApi;
-var CH=["O que é o Grupo Ticord?","Como mudo minha senha?","Como falo com o Comercial?","O que é a Bup?"];
+var CH=["Como funciona a Ticord?","Onde atualizo minha senha?","Como apresento uma ideia?","O que a Bup faz?"];
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function md(s){return esc(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/`([^`]+)`/g,"<code>$1</code>").replace(/(https?:\/\/[^\s<]*[^\s<.,;:!?)])/g,'<a href="$1" target="_blank" rel="noopener">$1</a>').replace(/\n/g,"<br>")}
 $("chips").innerHTML=CH.map(function(c){return "<button>"+esc(c)+"</button>"}).join("");
 $("chips").onclick=function(e){if(e.target.tagName==="BUTTON")ask(e.target.textContent)};
 function toLogin(){location.href="login.html"}
-function acts(){var a=$("acts");if(U){a.innerHTML="<span>Olá, "+esc(U.name.split(" ")[0])+"</span><button id='a1'>Abrir chat</button><a href='settings.html'>Configurações</a>";$("a1").onclick=openChat}else a.innerHTML='<a href="login.html">Entrar ou criar conta</a>'}
+function acts(){var a=$("acts");if(U){a.innerHTML="<span>Olá, "+esc(U.name.split(" ")[0])+"</span><button id='a1'>Ver conversa</button><a href='settings.html'>Preferências</a>";$("a1").onclick=openChat}else a.innerHTML='<a href="login.html">Entrar ou criar conta</a>'}
 function openChat(){$("land").style.display="none";$("chat").style.display="flex";return hist()}
 function hist(){$("msgs").innerHTML="";return api("/api/chat").then(function(d){if(d._s===401){U=null;return toLogin()}var m=d.messages||[];if(!m.length)bubble("a","Olá"+(U?", "+U.name.split(" ")[0]:"")+"! Sou o assistente de suporte do Grupo Ticord. Como posso te ajudar?");m.forEach(function(x){bubble(x.role==="user"?"u":"a",x.content)});scroll()})}
 function scroll(){var m=$("msgs");m.scrollTop=m.scrollHeight}
